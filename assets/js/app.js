@@ -81,7 +81,7 @@ function onedit(ele){
    xhr.open('GET',edit_url) ;
 
    xhr.onload=function(){
-    if(xhr.status>=200 && xhr.status<300){
+    if(xhr.status==200 && xhr.status<300){
       let res=JSON.parse(xhr.response);
       cl(res);
        titlec.value=res.title,
@@ -155,8 +155,8 @@ const onsubmit=(eve)=>{
                 <div class="card-body">
                 ${ob.body}</div>
                 <div class="card-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-outline-primary" onclick="onedit(this)>edit</button>
-                    <button type="button" class="btn btn-outline-danger" onclick="onremove(this)>delete</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="onedit(this)">edit</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="onremove(this)">delete</button>
                 </div>`;
 
       ff.append(card);
@@ -191,7 +191,7 @@ function onupdate(){
   update_url=`${POST_URL}/${upid}`;
       cl(update_url);
 
-  xhr.open('PATCH',update_url);
+  xhr.open('PUT',update_url);
   xhr.onload=function(){
      if(xhr.status>=200){
     let res=JSON.parse(xhr.response)
@@ -205,8 +205,8 @@ function onupdate(){
                 <div class="card-body">
                 ${upob.body}</div>
                 <div class="card-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-outline-primary" onclick="onedit(this)>edit</button>
-                    <button type="button" class="btn btn-outline-danger" onclick="onremove(this)>delete</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="onedit(this)">edit</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="onremove(this")>delete</button>
                 </div>`;
 
       ff.append(card);
