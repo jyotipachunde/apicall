@@ -25,7 +25,7 @@ cl(POST_URL);
 function createcard(arr){
   let res='';
   res+=arr.map(post=>{
-    return`<div class="card mt-3 shadow-rounded" id="${post.id}">
+    return`<div class="card mt-3 mb-3 shadow-rounded" id="${post.id}">
              <div class="card-header">
                 ${post.title}
                 </div>
